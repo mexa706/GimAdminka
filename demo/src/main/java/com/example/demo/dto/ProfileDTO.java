@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.util.UUID;
 @Getter
 @Setter
-public class Profile {
+public class ProfileDTO {
 
     private final String id= UUID.randomUUID().toString();
     private String name;
