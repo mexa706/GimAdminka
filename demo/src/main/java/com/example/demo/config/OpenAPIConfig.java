@@ -1,3 +1,5 @@
+/*
+
 package com.example.demo.config;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
@@ -30,23 +32,25 @@ public class OpenAPIConfig {
     public OpenAPI myOpenAPI() {
         Server devServer = new Server();
         devServer.setUrl(url);
-        devServer.setDescription("Youtube  test project");
+        devServer.setDescription("Gim  test project");
 
         Contact contact = new Contact();
-        contact.setEmail("youtube");
-        contact.setName("DoniDev");
-        contact.setUrl("https://www.bezkoder.com");
+        contact.setEmail("gim");
+        contact.setName("Mexa");
+        contact.setUrl("https://www.mexa.com");
 
 
         Info info = new Info()
-                .title("Youtube Management API")
+                .title("Gim Management API")
                 .version("1.0")
                 .contact(contact)
                 .description("This API exposes endpoints to manage tutorials.")
-                .termsOfService("https://www.donidev.com/terms")
+                .termsOfService("https://www.mexa.com/terms")
                 .license(null);
 
         return new OpenAPI().info(info).servers(List.of(devServer));
     }
 
 }
+
+*/

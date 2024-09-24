@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -25,8 +26,6 @@ public class ProfileEntity {
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "photo")
-    private String photo;
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
@@ -37,5 +36,7 @@ public class ProfileEntity {
     private Boolean visible= Boolean.TRUE;
     @Column(name = "created_date")
     private LocalDateTime createdDate = LocalDateTime.now();
+    @Column(name = "temp_email")
+    private String tempEmail;
 
 }

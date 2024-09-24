@@ -1,3 +1,4 @@
+
 package com.example.demo.config;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -24,4 +25,5 @@ public class MigrationConfiguration {
         return dataSourceBuilder.build();
     }
 }
+
 
