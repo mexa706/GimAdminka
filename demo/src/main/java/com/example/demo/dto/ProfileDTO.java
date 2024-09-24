@@ -5,6 +5,7 @@ import com.example.demo.enums.ProfileStatus;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 @Getter
 @Setter
@@ -14,10 +15,10 @@ public class ProfileDTO {
     private String name;
     private String surname;
     private String email;
-    private String phone;
     private String password;
     private ProfileRole role ;
     private ProfileStatus status;
     private Boolean visible;
-
+    private LocalDateTime createdDate;
+    private String jwt;
 }

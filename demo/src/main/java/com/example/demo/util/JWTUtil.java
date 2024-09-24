@@ -28,7 +28,7 @@ public class JWTUtil {
         jwtBuilder.claim("role", role);
 
         jwtBuilder.expiration(new Date(System.currentTimeMillis() + (tokenLiveTime)));
-        jwtBuilder.issuer("Youtube");
+        jwtBuilder.issuer("Gim");
         return jwtBuilder.compact();
     }
 

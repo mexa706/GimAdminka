@@ -11,8 +11,7 @@ public class RegistrationDTO {
     private String name;
     @NotBlank
     private String surname;
-    @NotBlank
-    private String phone;
+
     @NotBlank
     private String email;
     @NotBlank

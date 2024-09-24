@@ -1,0 +1,26 @@
+
+### Create User Adm
+POST localhost:8081/profile/adm/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcxOTk4NDUsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3Mjg2MjQ1LCJpc3MiOiJHaW0ifQ.0-DywgdWuKK8oj3p32JwU6oFgF6e_zRmVZbttIGQELDB8XGsgUbBTiJ65b3Px7OJxhdrXiCC-Pf56LSahtkDHQ
+
+{
+  "name": "sdswerwerfd",
+  "surname": "wewet",
+  "password": "323223",
+  "role": "ROLE_USER",
+  "status": "ACTIVE",
+  "email": "sd123@gmail.com"
+}
+
+
+
+### Update current User
+POST localhost:8081/profile/current/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcxOTk4ODUsImlkIjoiMyIsImVtYWlsIjoic2RAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcyNzI4NjI4NSwiaXNzIjoiR2ltIn0.8oKV2FGaHmDCgNFh6RDPi8tiHOZ40354wabnPuwq9F4yRWYNpCh0kREcn6v32yz2rFXSRVotZNk2KxLbzqT79g
+
+{
+  "name": "mexa",
+  "surname": "shosho"
+}

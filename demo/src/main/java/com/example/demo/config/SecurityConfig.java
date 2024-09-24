@@ -48,19 +48,12 @@ public class SecurityConfig {
                     .requestMatchers("/configuration/security").permitAll()
                     .requestMatchers("/swagger-ui/**").permitAll()
                     .requestMatchers("/webjars/**").permitAll()
-                    .requestMatchers("/swagger-ui.html").permitAll()
+                    .requestMatchers("/swagger-ui.html").permitAll()*/
 
 
+                    .requestMatchers("/profile/adm/**").hasRole("ADMIN")
+                    .requestMatchers("/profile/current/**").permitAll()
                     .requestMatchers("/auth/**").permitAll()
-                    .requestMatchers("/profile/adm/create/*").hasRole("ADMIN")
-                    .requestMatchers("/profile/**").permitAll()
-                    .requestMatchers("/attach/adm/**").hasRole("ADMIN")
-                    .requestMatchers("/attach/**").permitAll()
-                    .requestMatchers("/channel/**").permitAll()
-                    .requestMatchers("/playlist/**").permitAll()
-                    .requestMatchers("/video/**").permitAll()
-                    .requestMatchers("/category/adm/**").hasRole("ADMIN")
-                    .requestMatchers("/tag/adm/**").hasRole("ADMIN")*/
                     .anyRequest()
                     .authenticated();
         });

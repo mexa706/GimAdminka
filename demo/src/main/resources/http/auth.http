@@ -1,0 +1,19 @@
+
+
+### LoginAdm
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin5@gmail.com",
+  "password": "123123123123"
+}
+
+### Login
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+
+{
+  "email": "sd@gmail.com",
+  "password": "323223"
+}
