@@ -2,7 +2,7 @@
 ### Create User Adm
 POST localhost:8081/profile/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcxOTk4NDUsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3Mjg2MjQ1LCJpc3MiOiJHaW0ifQ.0-DywgdWuKK8oj3p32JwU6oFgF6e_zRmVZbttIGQELDB8XGsgUbBTiJ65b3Px7OJxhdrXiCC-Pf56LSahtkDHQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNTMyNzgsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3MzM5Njc4LCJpc3MiOiJHaW0ifQ.XUbUjsdUbQZpEoWs1ILp8OC6yqAjJOkt-gtAHkFjrBzmtMCsPXZz9XKzllvrOAX3YKAQkDTAavZNj9BPd9Nqug
 
 {
   "name": "sdswerwerfd",
@@ -10,17 +10,46 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcxOTk4NDUsImlkIjoiMSIsI
   "password": "323223",
   "role": "ROLE_USER",
   "status": "ACTIVE",
-  "email": "sd123@gmail.com"
+  "email": "sd@gmail.com"
 }
 
 
 
 ### Update current User
-POST localhost:8081/profile/current/update
+PUT localhost:8081/profile/current/update
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcxOTk4ODUsImlkIjoiMyIsImVtYWlsIjoic2RAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcyNzI4NjI4NSwiaXNzIjoiR2ltIn0.8oKV2FGaHmDCgNFh6RDPi8tiHOZ40354wabnPuwq9F4yRWYNpCh0kREcn6v32yz2rFXSRVotZNk2KxLbzqT79g
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNDYwMDcsImlkIjoiMyIsImVtYWlsIjoic2RAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcyNzMzMjQwNywiaXNzIjoiR2ltIn0.vfp2KcrSuq1GuhEnuOmu31-Nb2YBOQQ9z9-qAx7Cvu2ys5Xw_4f-vwq5WBCIy8qYHjaNFFjL-4BxqmmuVRzSjQ
 
 {
-  "name": "mexa",
-  "surname": "shosho"
+  "name": "shosho",
+  "surname": "123"
 }
+
+### Update current User For Adm
+PUT localhost:8081/profile/adm/update/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNDg0MDMsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3MzM0ODAzLCJpc3MiOiJHaW0ifQ.pdK8LdQchPyOObICaVhCD-O8AI0WO7TNuTxV5Fk1RaOHuUN7EvBWKFzfaVIaLyb2tgvQgbBHY7-vVXQLLtxNrg
+
+{
+  "name": "nima",
+  "surname": "gap",
+  "password": "323223",
+  "role": "ROLE_ADMIN",
+  "status": "NOT_ACTIVE",
+  "visible": "false",
+  "createdDate": "2024-09-25 11:56:22.527422",
+  "email": "sd123@gmail.com"
+}
+
+### update password for user
+PUT http://localhost:8081/profile/current/change-password?
+    oldPassword={{$random.alphanumeric(8)}}&
+    newPassword={{$random.alphanumeric(8)}}&
+    newPasswordRepeat={{$random.alphanumeric(8)}}
+    Content-Type: application/x-www-form-urlencoded
+
+###
+PUT http://localhost:8081/profile/current/change-password
+    ?oldPassword=323223&newPassword=newPass456&newPasswordRepeat=newPass456
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNTMzMTYsImlkIjoiNCIsImVtYWlsIjoic2RAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcyNzMzOTcxNiwiaXNzIjoiR2ltIn0.QM2Vljjiz-IJ-YjzNVBoLsTLpP39hg2xxJwGfnJjRuSs9N3-lwAu0Cj0R9Rmpf1LTX6FUuo91rYM47RZmaqjEw

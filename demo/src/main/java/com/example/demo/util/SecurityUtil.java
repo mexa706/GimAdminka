@@ -38,5 +38,4 @@ public class SecurityUtil {
         return user.profile();
     }
 
-
 }

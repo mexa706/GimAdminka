@@ -77,4 +77,50 @@ public class ProfileService {
         return toDTOUser(entity);
     }
 
+    public ProfileDTO updateForAdmin(ProfileDTO profile) {
+        ProfileEntity entity = SecurityUtil.getProfile();
+        Objects.requireNonNull(entity);
+
+
+        Optional<ProfileEntity> optional = profileRepository.getProfileById(profile.getId());
+        if (!optional.isPresent()) {
+            log.warn("Profile not found : {}", profile.getId());
+            throw new AppBadException("Profile not found");
+        }
+
+        ProfileEntity entity2 = new ProfileEntity();
+
+
+        entity2.setId(profile.getId());
+        entity2.setName(profile.getName());
+        entity2.setSurname(profile.getSurname());
+        entity2.setEmail(profile.getEmail());
+        entity2.setStatus(profile.getStatus());
+        entity2.setRole(profile.getRole());
+        entity2.setCreatedDate(profile.getCreatedDate());
+        entity2.setPassword(profile.getPassword());
+        entity2.setVisible(profile.getVisible());
+
+
+        profileRepository.save(entity2);
+        return toDTOUser(entity2);
+    }
+
+    public Boolean changePassword(String oldPassword, String newPassword, String newPasswordRepeat) {
+
+        if (!newPassword.equals(newPasswordRepeat)) {
+            throw new AppBadException("Passwords do not match");
+        }
+
+        ProfileEntity entity = SecurityUtil.getProfile();
+        Objects.requireNonNull(entity);
+
+        if (!entity.getPassword().equals(MD5Util.getMD5(oldPassword))) {
+            throw new AppBadException("Wrong password");
+        }
+
+        entity.setPassword(MD5Util.getMD5(newPassword));
+        profileRepository.save(entity);
+        return true;
+    }
 }

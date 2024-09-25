@@ -11,7 +11,7 @@ import java.util.UUID;
 @Setter
 public class ProfileDTO {
 
-    private final String id= UUID.randomUUID().toString();
+    private Integer id;
     private String name;
     private String surname;
     private String email;

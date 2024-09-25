@@ -31,11 +31,29 @@ public class ProfileController {
         return ResponseEntity.ok().body(response);
     }
 
-    @PutMapping("/current/update")
+    @PutMapping("/current/update") //USER
     @SecurityRequirement(name = "bearerAuth")
-    public ResponseEntity<ProfileDTO> update(@Valid @RequestBody ProfileUpdateDTO profile) {
+    public ResponseEntity<ProfileDTO> updateForUser(@Valid @RequestBody ProfileUpdateDTO profile) {
         return ResponseEntity.ok().body(profileService.update(profile));
     }
+
+    @PutMapping  ("/adm/update/{id}") // ADMIN
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<ProfileDTO> updateForAdmin(@PathVariable Integer id, @Valid @RequestBody ProfileDTO profile) {
+        profile.setId(id);
+        return ResponseEntity.ok().body(profileService.updateForAdmin(profile));
+    }
+
+    @PutMapping("/current/change-password") //USER
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<Boolean> changePassword(
+            @RequestParam String oldPassword,
+            @RequestParam String newPassword,
+            @RequestParam String newPasswordRepeat) {
+        return ResponseEntity.ok().body(profileService.changePassword(oldPassword, newPassword, newPasswordRepeat));
+    }
+
+
 
 
 }
