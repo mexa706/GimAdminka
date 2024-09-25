@@ -1,0 +1,36 @@
+25 сент. 2024 - 16:26:33.324 [main] INFO  com.example.demo.GimApplication - Starting GimApplication using Java 22.0.1 with PID 11852 (C:\Users\ppmag\OneDrive\Рабочий стол\demo\demo\target\classes started by ppmag in C:\Users\ppmag\OneDrive\Рабочий стол\demo)
+25 сент. 2024 - 16:26:33.340 [main] INFO  com.example.demo.GimApplication - No active profile set, falling back to 1 default profile: "default"
+25 сент. 2024 - 16:26:34.354 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+25 сент. 2024 - 16:26:34.468 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 106 ms. Found 1 JPA repository interface.
+25 сент. 2024 - 16:26:35.087 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+25 сент. 2024 - 16:26:35.099 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+25 сент. 2024 - 16:26:35.100 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.30]
+25 сент. 2024 - 16:26:35.151 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+25 сент. 2024 - 16:26:35.152 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1778 ms
+25 сент. 2024 - 16:26:35.394 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+25 сент. 2024 - 16:26:35.434 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.5.3.Final
+25 сент. 2024 - 16:26:35.460 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+25 сент. 2024 - 16:26:35.686 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+25 сент. 2024 - 16:26:35.708 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+25 сент. 2024 - 16:26:35.834 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ae6451d
+25 сент. 2024 - 16:26:35.835 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+25 сент. 2024 - 16:26:36.552 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+25 сент. 2024 - 16:26:36.598 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+25 сент. 2024 - 16:26:37.041 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+25 сент. 2024 - 16:26:37.080 [main] INFO  o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+25 сент. 2024 - 16:26:37.081 [main] WARN  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+25 сент. 2024 - 16:26:37.487 [main] INFO  o.s.b.a.e.web.EndpointLinksResolver - Exposing 1 endpoint beneath base path '/actuator'
+25 сент. 2024 - 16:26:37.715 [main] WARN  o.s.b.a.t.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration - Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+25 сент. 2024 - 16:26:38.171 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+25 сент. 2024 - 16:26:38.184 [main] INFO  com.example.demo.GimApplication - Started GimApplication in 5.246 seconds (process running for 5.828)
+25 сент. 2024 - 16:26:38.304 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/gimAdminka (PostgreSQL 17.0)
+25 сент. 2024 - 16:26:38.312 [main] WARN  o.f.c.i.database.base.Database - Flyway upgrade recommended: PostgreSQL 17.0 is newer than this version of Flyway and support has not been tested. The latest supported version of PostgreSQL is 16.
+25 сент. 2024 - 16:26:38.343 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 4 migrations (execution time 00:00.023s)
+25 сент. 2024 - 16:26:38.353 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "public": 3
+25 сент. 2024 - 16:26:38.354 [main] INFO  o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+25 сент. 2024 - 16:26:38.594 [RMI TCP Connection(2)-192.168.0.108] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+25 сент. 2024 - 16:26:38.594 [RMI TCP Connection(2)-192.168.0.108] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+25 сент. 2024 - 16:26:38.595 [RMI TCP Connection(2)-192.168.0.108] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+25 сент. 2024 - 16:27:55.514 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+25 сент. 2024 - 16:27:55.517 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+25 сент. 2024 - 16:27:55.521 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

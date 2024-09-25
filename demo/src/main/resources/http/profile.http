@@ -41,15 +41,22 @@ Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNDg0MDMsImlkIjoiMSIsI
   "email": "sd123@gmail.com"
 }
 
-### update password for user
+### update password for User
 PUT http://localhost:8081/profile/current/change-password?
     oldPassword={{$random.alphanumeric(8)}}&
     newPassword={{$random.alphanumeric(8)}}&
     newPasswordRepeat={{$random.alphanumeric(8)}}
     Content-Type: application/x-www-form-urlencoded
 
-###
+### change-password for User
 PUT http://localhost:8081/profile/current/change-password
     ?oldPassword=323223&newPassword=newPass456&newPasswordRepeat=newPass456
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNTMzMTYsImlkIjoiNCIsImVtYWlsIjoic2RAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcyNzMzOTcxNiwiaXNzIjoiR2ltIn0.QM2Vljjiz-IJ-YjzNVBoLsTLpP39hg2xxJwGfnJjRuSs9N3-lwAu0Cj0R9Rmpf1LTX6FUuo91rYM47RZmaqjEw
+
+
+### delete user for Admin
+DELETE http://localhost:8081/profile/adm/delete/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MjcyNjMxMDQsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3MzQ5NTA0LCJpc3MiOiJHaW0ifQ.Ye1MNc-tGRwmAa9yTT-x9SNnF_YhCh1ANNq5oa19NpaOIXQXFwGjHGJy36NKaGJ0pjBhBbU2KiG3e_5OSw6oRA
+

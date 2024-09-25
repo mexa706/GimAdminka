@@ -16,6 +16,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Slf4j
 @RestController
 @RequestMapping("/profile")
@@ -51,6 +53,12 @@ public class ProfileController {
             @RequestParam String newPassword,
             @RequestParam String newPasswordRepeat) {
         return ResponseEntity.ok().body(profileService.changePassword(oldPassword, newPassword, newPasswordRepeat));
+    }
+
+    @DeleteMapping("/adm/delete/{id}") //ADMIN
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<ProfileDTO> delete(@PathVariable Integer id) {
+        return ResponseEntity.ok().body(profileService.deleteProfileById(id));
     }
 
 

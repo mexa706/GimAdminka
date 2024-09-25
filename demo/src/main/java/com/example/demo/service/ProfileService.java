@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 
@@ -122,5 +123,17 @@ public class ProfileService {
         entity.setPassword(MD5Util.getMD5(newPassword));
         profileRepository.save(entity);
         return true;
+    }
+
+
+    public ProfileDTO deleteProfileById(Integer id) {
+        Optional<ProfileEntity> optional = profileRepository.getProfileById(id);
+        if (!optional.isPresent()) {
+            log.warn("Profile not found : {}", id);
+            throw new AppBadException("Profile not found");
+        }
+        ProfileEntity entity = optional.get();
+        profileRepository.deleteById(id.toString());
+        return toDTOUser(entity);
     }
 }
