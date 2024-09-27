@@ -2,15 +2,15 @@
 ### Create User Adm
 POST localhost:8081/profile/adm/create
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3Mjc0NTc3NjksImlkIjoiNSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3NTQ0MTY5LCJpc3MiOiJHaW0ifQ.MMeVWgPXnl80M3gOcq5Z81WaGSdn0uSfyEcRePSqwVnmdDJ0wVMBy5rqWzl26OGgqqjT0LfqBh-wWJx8FP7-Bg
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3Mjc0NTg5MjIsImlkIjoiMSIsImVtYWlsIjoiYWRtaW41QGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzI3NTQ1MzIyLCJpc3MiOiJHaW0ifQ.auEkBBW3YtL5HlgxqItf44R3wCwRL1wbnIr5UHw1QAdX9u18OBpzXdhjYrRVVKFm8YKY65LqKcjmChidlhqyZA
 
 {
   "name": "sdswerwerfd",
   "surname": "wewet",
   "password": "323223",
-  "role": "ROLE_USER",
+  "role": "ROLE_ADMIN",
   "status": "ACTIVE",
-  "email": "sd123@gmail.com"
+  "email": "sd123W@gmail.com"
 }
 
 

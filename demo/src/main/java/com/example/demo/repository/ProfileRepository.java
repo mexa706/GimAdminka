@@ -18,5 +18,5 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity,String> 
 
     Iterable<ProfileEntity> findAll();
 
-    Page<ProfileEntity> findAllByPageable(Pageable pageable);
+
 }
