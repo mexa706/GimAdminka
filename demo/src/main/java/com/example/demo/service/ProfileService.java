@@ -3,7 +3,6 @@ package com.example.demo.service;
 import com.example.demo.dto.ProfileCreateDTO;
 import com.example.demo.dto.ProfileDTO;
 import com.example.demo.dto.ProfileUpdateDTO;
-import com.example.demo.dto.auth.RegistrationDTO;
 import com.example.demo.entity.ProfileEntity;
 import com.example.demo.exp.AppBadException;
 import com.example.demo.repository.ProfileRepository;
@@ -14,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.awt.print.Pageable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -130,7 +129,6 @@ public class ProfileService {
         return true;
     }
 
-
     public ProfileDTO deleteProfileById(Integer id) {
         Optional<ProfileEntity> optional = profileRepository.getProfileById(id);
         if (!optional.isPresent()) {
@@ -141,6 +139,7 @@ public class ProfileService {
         profileRepository.deleteById(id.toString());
         return toDTOUser(entity);
     }
+
     public List<ProfileDTO> getAllUser() {
         Iterable<ProfileEntity> list = profileRepository.findAll();
 
@@ -160,12 +159,12 @@ public class ProfileService {
         return dtos;
     }
 
-  /*  public PageImpl<ProfileDTO> getAllWithPagination(int page, int size) {
-        Pageable pageable = PageRequest.of(page, size);
-        Page<ProfileEntity> profileEntities = profileRepository.findAll(pageable);
-        List<ProfileDTO> profileList = new ArrayList<>();
-        profileEntities.getContent().forEach(profileEntity -> profileList.add(toDTO(profileEntity)));
-        return new PageImpl<>(profileList, pageable, profileEntities.getTotalElements());
-    }*/
+   /*public PageImpl<ProfileDTO> getAllWithPagination(int page, int size) {
+    Pageable pageable = (Pageable) PageRequest.of(page, size);
+    Page<ProfileEntity> profileEntities = profileRepository.findAllByPageable(pageable);
+    List<ProfileDTO> profileList = new ArrayList<>();
+    profileEntities.getContent().forEach(profileEntity -> profileList.add(toDTO(profileEntity)));
+    return new PageImpl<>(profileList, (org.springframework.data.domain.Pageable) pageable, profileEntities.getTotalElements());
+}*/
 
 }

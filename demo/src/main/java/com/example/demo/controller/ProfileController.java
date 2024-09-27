@@ -68,11 +68,10 @@ public class ProfileController {
         return ResponseEntity.ok().body(profileService.getAllUser());
     }
 
-   /* @GetMapping("/adm/all_with_pagination") //ADMIN
+  /*  @GetMapping("/adm/all_with_pagination") //ADMIN
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<PageImpl<ProfileDTO>> getAllWithPagination(@RequestParam(value = "page", defaultValue = "1") int page,
-                                                                     @RequestParam(value = "size", defaultValue = "10") int size,
-                                                                     @RequestHeader("Authorization") String token) {
+                                                                     @RequestParam(value = "size", defaultValue = "10") int size) {
         PageImpl<ProfileDTO> pageList = profileService.getAllWithPagination(page - 1, size);
         return ResponseEntity.ok().body(pageList);
     }*/
