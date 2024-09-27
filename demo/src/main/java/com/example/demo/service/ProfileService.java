@@ -11,8 +11,13 @@ import com.example.demo.util.MD5Util;
 import com.example.demo.util.SecurityUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -136,4 +141,31 @@ public class ProfileService {
         profileRepository.deleteById(id.toString());
         return toDTOUser(entity);
     }
+    public List<ProfileDTO> getAllUser() {
+        Iterable<ProfileEntity> list = profileRepository.findAll();
+
+
+        List<ProfileEntity> profileList = new ArrayList<>();
+        list.forEach(profileList::add);
+
+        if (profileList.isEmpty()) {
+            log.warn("Profiles not found");
+            throw new AppBadException("Profiles not found");
+        }
+
+        List<ProfileDTO> dtos = new ArrayList<>();
+        for (ProfileEntity profileEntity : profileList) {
+            dtos.add(toDTOUser(profileEntity));
+        }
+        return dtos;
+    }
+
+  /*  public PageImpl<ProfileDTO> getAllWithPagination(int page, int size) {
+        Pageable pageable = PageRequest.of(page, size);
+        Page<ProfileEntity> profileEntities = profileRepository.findAll(pageable);
+        List<ProfileDTO> profileList = new ArrayList<>();
+        profileEntities.getContent().forEach(profileEntity -> profileList.add(toDTO(profileEntity)));
+        return new PageImpl<>(profileList, pageable, profileEntities.getTotalElements());
+    }*/
+
 }

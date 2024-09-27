@@ -12,6 +12,7 @@ import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +40,7 @@ public class ProfileController {
         return ResponseEntity.ok().body(profileService.update(profile));
     }
 
-    @PutMapping  ("/adm/update/{id}") // ADMIN
+    @PutMapping("/adm/update/{id}") // ADMIN
     @SecurityRequirement(name = "bearerAuth")
     public ResponseEntity<ProfileDTO> updateForAdmin(@PathVariable Integer id, @Valid @RequestBody ProfileDTO profile) {
         profile.setId(id);
@@ -61,7 +62,20 @@ public class ProfileController {
         return ResponseEntity.ok().body(profileService.deleteProfileById(id));
     }
 
+    @GetMapping("/adm/getAllUser")  //ADMIN
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<List<ProfileDTO>> getAllUser() {
+        return ResponseEntity.ok().body(profileService.getAllUser());
+    }
 
+   /* @GetMapping("/adm/all_with_pagination") //ADMIN
+    @SecurityRequirement(name = "bearerAuth")
+    public ResponseEntity<PageImpl<ProfileDTO>> getAllWithPagination(@RequestParam(value = "page", defaultValue = "1") int page,
+                                                                     @RequestParam(value = "size", defaultValue = "10") int size,
+                                                                     @RequestHeader("Authorization") String token) {
+        PageImpl<ProfileDTO> pageList = profileService.getAllWithPagination(page - 1, size);
+        return ResponseEntity.ok().body(pageList);
+    }*/
 
 
 }
